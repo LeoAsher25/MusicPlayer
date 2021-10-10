@@ -1,0 +1,87 @@
+@import "../../scss/var";
+
+.menu {
+  padding: 10px 5px;
+  overflow: auto;
+  padding-right: 15px;
+
+  overflow: overlay;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 16px;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-clip: content-box;
+    background-color: transparent;
+    transition: all 0.3s;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-color: $primary-color;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-track {
+      background-color: rgba(255, 0, 0, 0.05);
+    }
+  }
+
+  .song-list {
+    // overflow: auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    .song {
+      color: #444;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      cursor: pointer;
+      transition: 0.5s;
+
+      display: flex;
+      box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+      margin: 0 {
+        top: 3px;
+        bottom: 3px;
+      }
+      padding: 10px;
+      border-radius: 10px;
+      &__img {
+        width: 60px;
+        margin: 0 {
+          right: 15px;
+        }
+        img {
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 50%;
+          width: 100%;
+        }
+      }
+      &__desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 {
+          top: -5px;
+        }
+
+        // h3,
+        // h5 {
+        //   margin: 0;
+        // }
+      }
+      &.active {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}

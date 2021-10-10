@@ -1,0 +1,57 @@
+@import "../../scss/var";
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  .title {
+    margin-top: 12px;
+
+    h5 {
+      margin: 0;
+    }
+    h3 {
+      color: $primary-color;
+      margin: 3px;
+    }
+  }
+  .cd {
+    $size: 200px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    margin: 10px {
+      bottom: 20px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  & .cd .img {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+    animation: cdSpin 5s linear infinite;
+  }
+  &.playing .cd .img {
+    -webkit-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -o-animation-play-state: running;
+    animation-play-state: running;
+  }
+  &.paused .cd .img {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  @keyframes cdSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
